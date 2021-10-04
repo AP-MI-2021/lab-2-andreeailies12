@@ -1,0 +1,22 @@
+problema 12. 
+def  get_perfect_squares(start: int, end: int) -> list[int]:
+    lista = []
+    for i in range(start, end + 1):
+        j = 1
+        verificare = False
+        while j * j <= i and not verificare:
+            if i % j == 0 and i // j == j:
+                verificare = True
+            j += 1
+        if verificare:
+             lista.append(i)
+    return lista
+
+def test_get_perfect_squares():
+    assert get_perfect_squares(1, 16) == [1, 4, 9, 16]
+
+
+test_get_perfect_squares()
+
+
+
