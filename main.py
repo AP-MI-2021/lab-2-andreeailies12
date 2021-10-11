@@ -4,6 +4,7 @@ problema 1
 """
 
 
+
 def get_largest_prime_below(n):
     nr = n - 1
     nuprime = 0
@@ -69,26 +70,38 @@ def test_is_palindrome():
 
 
 def main():
+    test_get_largest_below()
+    test_get_perfect_squares()
+    test_is_palindrome()
+
     a = input("""
     Alegeti:
-    1. Sa gasesti ultimul nr prim mai mic decat numarul dat.
-    2. Sa se afle toate patratele perfect dintr un interval inchis.
-    3. Sa se afle dacă un număr dat este palindrom.
-    4. Poti iesi
+    1. Citire numar.
+    2. Sa gasesti ultimul nr prim mai mic decat numarul dat.
+    3. Sa se afle toate patratele perfect dintr un interval inchis.
+    4. Sa se afle dacă un număr dat este palindrom.
+    5. Poti iesi
     """)
-    while a != '4':
+
+    while a != '5':
         if a == '1':
-            test_get_largest_below()
+            nr = int(input('Citire numar'))
         elif a == '2':
-            test_get_perfect_squares()
+            print(get_largest_prime_below(nr))
         elif a == '3':
-            test_is_palindrome()
+            a = int(input('Alegeti inceputul intervalului: '))
+            b = int(input('Alegeti sfarsitul intervalului: '))
+            print(get_perfect_squares(a, b))
+        elif a == '4':
+            print(is_palindrome(nr))
+
         a = input("""
     Alegeti:
-    1. Sa gasesti ultimul nr prim mai mic decat numarul dat.
-    2. Sa se afle toate patratele perfect dintr un interval inchis.
-    3. Sa se afle dacă un număr dat este palindrom.
-    4. Poti iesi
+    1. Citire numar.
+    2. Sa gasesti ultimul nr prim mai mic decat numarul dat.
+    3. Sa se afle toate patratele perfect dintr un interval inchis.
+    4. Sa se afle dacă un număr dat este palindrom.
+    5. Poti iesi
     """)
 
 
